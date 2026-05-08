@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PERSONAL WEBSITE</title>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: #ccc;
+    margin: 0 15px;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00ffff;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00ffff;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+header{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero{
+    padding:30px;
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 30px rgba(0,255,255,0.1);
+}
+
+.hero-pic{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:2px solid #00ffff;
+    box-shadow:0 0 15px #00ffff;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    letter-spacing:2px;
+}
+
+.hero p{
+    color:#aaa;
+    margin:10px 0 20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:#00ffff;
+    color:#000;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00ffff;
+}
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #111, #000);
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* mga animation uwu */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+/* show animation */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SKILLS */
+.skills ul {
+    list-style: none;
+}
+
+.skills li {
+    padding: 10px;
+    border-bottom: 1px solid #222;
+}
+
+/* PORTFOLIO GRID */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.portfolio img, video {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+/* hover glow */
+.portfolio img:hover, video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #777;
+}
+
+.stars{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black url("https://www.transparenttextures.com/patterns/stardust.png");
+    z-index:-1;
+    animation:moveStars 60s linear infinite;
+}
+
+@keyframes moveStars{
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:0 -1000px;
+    }
+}
+section{
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.08);
+    transition: 0.3s;
+}
+
+section:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.2);
+}
+.socials{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+}
+
+.socials a img{
+    width:40px;
+    height:40px;
+    transition:0.3s;
+    filter: brightness(0.9);
+}
+
+.socials a img:hover{
+    transform:scale(1.2);
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+.info-card{
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    transition: 0.3s;
+}
+
+.info-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.25);
+}
+
+.info-card p{
+    margin: 8px 0;
+    color: #ddd;
+}
+
+.info-card b{
+    color: #00ffff;
+}
+
+.info-card hr{
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 15px 0;
+}
+
+.desc{
+    color: #aaa;
+    font-style: italic;
+}
+.edu-card{
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    transition: 0.3s;
+}
+
+.edu-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.25);
+}
+
+.edu-card p{
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.edu-card b{
+    color: #00ffff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="twinkling"></div>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#info">Info</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
+    <div class="hero">
+        <img src="Esports-poster/SHENARTS.png" class="hero-pic">
+
+        <h1>SHENARTS PORTFOLIO</h1>
+        <p>Graphic Designer | Video Editor | Layout Artist</p>
+
+        <a href="#portfolio" class="btn">View My Work</a>
+    </div>
+</header>
+
+<section id="info" class="hidden">
+    <h2>Personal Info</h2>
+
+    <div class="info-card">
+
+        <p><b>Name:</b> Arvic Sheene Misa</p>
+        <p><b>Age:</b> 20 Years Old</p>
+        <p><b>Birthday:</b> August 19, 2005</p>
+        <p><b>Role:</b> Graphic Designer / Video Editor</p>
+        <p><b>Tools:</b> Photoshop, Illustrator, Canva, CapCut, Adobe Premiere</p>
+
+        <hr>
+
+        <p class="desc">
+            I am a layout artist focused on jersey layouts, cinematic edits, and visualizing esport teams.
+        </p>
+
+    </div>
+</section>
+
+<section id="education" class="hidden">
+    <h2>Educational Background</h2>
+
+    <div class="edu-card">
+
+        <p><b>Elementary:</b> Cassidy Elementary School</p>
+        <p><b>High School:</b> Carigara National High School</p>
+        <p><b>College:</b> Bachelor of Science in Information Technology</p>
+
+    </div>
+</section>
+
+<section id="skills" class="skills hidden">
+    <h2>Skills</h2>
+    <ul>
+        <li>Graphic Design (Jersey Layouts)</li>
+        <li>Photoshop & Illustrator</li>
+        <li>Cinematic Video Editing</li>
+    </ul>
+</section>
+
+<section id="portfolio" class="hidden">
+    
+
+    <h1>JERSEY DESIGNS</h1>
+    <div class="portfolio">
+        <img src="jersey-sets/4.png">
+        <img src="jersey-sets/9.png">
+        <img src="jersey-sets/18.png">
+		<img src="jersey-sets/22.png">
+		<img src="jersey-sets/65.png">
+		<img src="jersey-sets/71.png">
+		<img src="jersey-sets/81.png">
+		<img src="jersey-sets/112.png">
+		<img src="jersey-sets/117.png">
+		<img src="jersey-sets/122.png">
+		<img src="jersey-sets/127.png">
+		<img src="jersey-sets/132.png">
+		<img src="jersey-sets/137.png">
+		<img src="jersey-sets/142.png">
+		<img src="jersey-sets/152.png">
+		<img src="jersey-sets/157.png">
+		<img src="jersey-sets/162.png">
+		<img src="jersey-sets/170.png">
+		<img src="jersey-sets/176.png">
+		<img src="jersey-sets/182.png">
+		<img src="jersey-sets/188.png">
+		<img src="jersey-sets/240.png">
+		<img src="jersey-sets/269.png">
+		<img src="jersey-sets/303.png">
+		<img src="jersey-sets/260.png">
+		<img src="jersey-sets/274.png">
+    </div>
+	
+<section id="portfolio" class="hidden">
+
+    <h1>ESPORT POSTERS</h1>
+    <div class="portfolio">
+		<img src="Esports-poster/EVSU-CC-EAGLES.png">
+	</div>
+	
+    <h1 style="margin-top:20px;">Films</h1>
+    <div class="portfolio">
+        <video controls>
+            <source src="films/MIGUEL-THE- PRIEST.mp4" type="video/mp4">
+        </video>
+        <video controls>
+            <source src="films/TALA-DEBUT-FILM.mp4" type="video/mp4">
+        </video>
+		<video controls>
+		<source src="films/SIDE-EYE.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<section id="contact" class="hidden">
+    <h2>Contact</h2>
+    <p>Email: arvicsheenemisa2@email.com</p>
+    <p>Facebook: Arvic S. O. Misa</p>
+<div class="socials">
+
+    <a href="https://www.facebook.com/arvicsheene.misa" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+    </a>
+
+    <a href="https://www.tiktok.com/@shensuu15" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+    </a>
+
+</div>
+</section>
+
+<footer>
+    <p>© arvicsheene2@gmail.com * ARVIC S. O. MISA * 09481271391</p>
+</footer>
+
+<script>
+// scroll animation
+const hiddenElements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+hiddenElements.forEach(el => observer.observe(el));
+</script>
+ 
+
+</body>
+</html>
